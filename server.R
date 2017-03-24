@@ -1,11 +1,3 @@
-#
-# This is the server logic of a Shiny web application. You can run the 
-# application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-# 
-#    http://shiny.rstudio.com/
-#
 
 library(shiny)
 library(shinyjs)
@@ -86,6 +78,6 @@ shinyServer(function(input, output, session) {
               text = element_text(size=14),
               legend.position="bottom", legend.background = element_rect()) 
       
-    },height = 430, width = 800)
+    },height = 430, width = 750)
     
   })

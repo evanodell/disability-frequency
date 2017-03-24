@@ -1,11 +1,3 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-# 
-#    http://shiny.rstudio.com/
-#
 
 library(shiny)
 library(shinyjs)
@@ -14,8 +6,6 @@ library(scales)
 library(grid)
 library(data.table)
 
-
-# Define UI for application that draws a histogram
 shinyUI(fluidPage(
   
   fluidPage(
@@ -33,7 +23,7 @@ shinyUI(fluidPage(
       
       tags$div(align = "left", 
                class = "multicol",
-               style = 'width:800px;',
+               style = 'width:750px;',
                
                checkboxGroupInput("category_input",
                                   "Words and Phrases",
