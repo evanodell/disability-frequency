@@ -26,8 +26,6 @@ shinyUI(fluidPage(
                               column-count: 4;
                               }"))),
     fluidRow(
-      
-      h4("Disability Discussion Frequency Chart"),
       plotOutput("hansardplot")),
     
     fluidRow(
