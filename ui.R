@@ -44,7 +44,7 @@ shinyUI(fluidPage(
                                     "Disabled Children",
                                     "Disability Other",
                                     "Children With Disability",
-                                    "Any With Disability",
+                                    "Any Other With Disability" = "Any With Disability",
                                     "Independent Living",
                                     "Wheelchair",
                                     "Paralympic",
