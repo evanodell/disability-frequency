@@ -26,7 +26,8 @@ shinyUI(fluidPage(
                               column-count: 4;
                               }"))),
     fluidRow(
-      plotOutput("hansardplot")),
+      tags$div(style = 'height:430px;',
+      plotOutput("hansardplot"))),
     
     fluidRow(
       
