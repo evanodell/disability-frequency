@@ -34,6 +34,7 @@ shinyUI(fluidPage(
       
       tags$div(align = "left", 
                class = "multicol",
+               width = "700",
                
                checkboxGroupInput("category_input",
                                   "Words and Phrases",
