@@ -78,6 +78,6 @@ shinyServer(function(input, output, session) {
               text = element_text(size=14),
               legend.position="bottom", legend.background = element_rect()) 
       
-    },height = 430, width = 750)
+    },height = 430, width = 700)
     
   })
