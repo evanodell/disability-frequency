@@ -249,7 +249,19 @@ names(all_zoo_gg)[names(all_zoo_gg) == "variable"] <- "Term"
 
 all_zoo_gg$Year <- year(all_zoo_gg$Date)
 
-write_rds(all_zoo_gg, "./data/disability_phrase_groups.rds")
+write_rds(disability_phrase_groups, "./data/disability_phrase_groups.rds")
+
+disability_phrase_groups <- read_rds("./data/disability_phrase_groups.rds")
+
+disability_phrase_groups$month <-  format(as.Date(disability_phrase_groups$Date), "%Y-%m")
+
+disability_phrase_groups <- group_by(disability_phrase_groups, Date, Term)
 
 
 
+system.time(
+  disability_phrase_groups <- summarise(disability_phrase_groups,
+                                value = mean(value)
+                                
+  )
+)
