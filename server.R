@@ -55,8 +55,9 @@ shinyServer(function(input, output, session) {
   
   getDataSet <- reactive({
     
-    all_data <- disability_phrase_groups[disability_phrase_groups$Term %in% input$category_input & disability_phrase_groups$Year >= 
-                                           input$year[1] & disability_phrase_groups$Year <= input$year[2], ]
+    all_data <- disability_phrase_groups[disability_phrase_groups$Term %in% input$category_input &
+                                           disability_phrase_groups$Year >=  input$year[1] &
+                                           disability_phrase_groups$Year <= input$year[2], ]
   })
   
   output$hansardplot <- renderPlot({
@@ -64,7 +65,7 @@ shinyServer(function(input, output, session) {
     dataSet <- getDataSet()
     
     p3 <- ggplot(dataSet, aes(x = Date, group = Term, col = Term))
-    p3 + geom_smooth(aes(y = value, linetype = Term, col = Term),
+    p3 + stat_smooth(aes(y = value, linetype = Term, col = Term),
                      size = 1.5, formula = y ~ log(x), se = FALSE) +
       coord_cartesian(xlim = c(as.Date(min(dataSet$Date)), as.Date(max(dataSet$Date)))) +
       scale_linetype_manual(values = line_styles) +

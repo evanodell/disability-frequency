@@ -114,10 +114,14 @@ vull_zoo_gg$variable <- as.factor(vull_zoo_gg$variable)
 ### Best and most acurate plot
 p3 <- ggplot(vull_zoo_gg, aes(x = Date, group = variable, col = variable))
 ## Need to remove days that Parliament did not sit Need to drop scientific notation
-p3 + geom_smooth(aes(y = value, linetype = variable, col = variable), size = 1.5, formula = y ~ log(x), se = FALSE) + coord_cartesian(xlim = c(as.Date("1975-01-01"), 
-                                                                                                                                               as.Date("2016-11-24"))) + scale_x_date(date_breaks = "5 year", date_labels = "%Y") + scale_y_continuous(trans = log_trans(5), breaks = base_breaks(), 
-                                                                                                                                                                                                                                                       name = "Average Mentions per Day (Logarithmic Scale)", labels = fmt_dcimals(3)) + theme(axis.text.x = element_text(angle = 30, hjust = 1), 
-                                                                                                                                                                                                                                                                                                                                               legend.position = "bottom") + ggtitle("Average number of mentions of \"our most vulnerable citizen\", per day of debate, 1978-2016")
+p3 + geom_smooth(aes(y = value, linetype = variable, col = variable),
+                 size = 1.5, formula = y ~ log(x), se = FALSE) +
+  coord_cartesian(xlim = c(as.Date("1975-01-01"), as.Date("2016-11-24"))) + 
+  scale_x_date(date_breaks = "5 year", date_labels = "%Y") + 
+  scale_y_continuous(trans = log_trans(5), breaks = base_breaks(), 
+                     "Mentions per Day (Logarithmic Scale)", labels = fmt_dcimals(3)) +
+  theme(axis.text.x = element_text(angle = 30, hjust = 1), legend.position = "bottom") +
+  ggtitle("Average number of mentions of \"our most vulnerable citizen\", per day of debate, 1978-2016")
 
 summary(vull_zoo_gg)
 
